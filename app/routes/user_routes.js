@@ -1,15 +1,8 @@
 const express = require('express')
-// jsonwebtoken docs: https://github.com/auth0/node-jsonwebtoken
 const crypto = require('crypto')
-// Passport docs: http://www.passportjs.org/docs/
 const passport = require('passport')
-// bcrypt docs: https://github.com/kelektiv/node.bcrypt.js
 const bcrypt = require('bcrypt')
-
-// see above for explanation of "salting", 10 rounds is recommended
 const bcryptSaltRounds = 10
-
-// pull in error types and the logic to handle them and set status codes
 const errors = require('../../lib/custom_errors')
 
 const BadParamsError = errors.BadParamsError
@@ -17,12 +10,8 @@ const BadCredentialsError = errors.BadCredentialsError
 
 const User = require('../models/user')
 
-// passing this as a second argument to `router.<verb>` will make it
-// so that a token MUST be passed for that route to be available
-// it will also set `res.user`
 const requireToken = passport.authenticate('bearer', { session: false })
 
-// instantiate a router (mini app that only handles routes)
 const router = express.Router()
 
 // SIGN UP
@@ -44,6 +33,7 @@ router.post('/sign-up', (req, res, next) => {
     .then(hash => {
       // return necessary params to create a user
       return {
+        username: req.body.credentials.username, // adding username?
         email: req.body.credentials.email,
         hashedPassword: hash
       }
@@ -63,10 +53,10 @@ router.post('/sign-in', (req, res, next) => {
   const pw = req.body.credentials.password
   let user
 
-  // find a user based on the email that was passed
-  User.findOne({ email: req.body.credentials.email })
+  // find a user based on the username that was passed
+  User.findOne({ username: req.body.credentials.username })
     .then(record => {
-      // if we didn't find a user with that email, send 401
+      // if we didn't find a user with that username, send 401
       if (!record) {
         throw new BadCredentialsError()
       }
