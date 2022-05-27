@@ -12,6 +12,9 @@ const profileSchema = new mongoose.Schema(
     last: {
       type: String
     },
+    color: {
+      type: String
+    },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',

@@ -52,4 +52,19 @@ router.get('/profile/:id', requireToken, (req, res, next) => {
     .catch(next)
 })
 
+router.get('/profiles', requireToken, (req, res, next) => {
+  // const userId = req.user.id
+  Profile.find()
+    .then(handle404)
+    .then((profiles) => {
+      console.log(profiles)
+      return profiles
+    })
+    .then((profiles) => {
+      return profiles.map((profile) => profile.toObject())
+    })
+    .then((profiles) => res.status(200).json({profiles: profiles}))
+    .catch(next)
+})
+
 module.exports = router

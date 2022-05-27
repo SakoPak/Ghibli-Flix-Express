@@ -11,17 +11,34 @@ Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up 
 ## Logging in Online
  To log in and get started, click <a href="" target="_blank">here!</a>
 
+## Installation
+
+Before you can run the app with `nodemon server.js` install the depedencies: Node.js and npm on your computer. 
+
+[Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
+To begin, navigate on the project directory, after you have downloaded or cloned this repository and run:
+
+##### `npm install`
+
+- Then, while in the project directory, you can run:
+
+##### `nodemon server.js`
+
+- Nodemon is a tool that helps develop Node.js based apps by automatically restarting and developing when any changes are detected. 
+- To use, simply replace the word node on the command line when running your script.
+- To install: ``` npm install -g nodemon ```
+
+#### Learn More
 
 ## User Stories    
 
 - User will be able to sign up, sign in, sign out and change password.
 - User will create a profile and be able to update and delete it.
 - User will pick a Ghibli movie that they want further information on and view all Ghibli movies.
-- User can pick movies to place on their watchlist.
-- User will be able to edit, delete and update their watchlist.
   
 
 ## ERD
+[My ERD](https://imgur.com/a/1URM9df)
 
 ## Authentication
 
@@ -32,6 +49,37 @@ Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up 
 | PATCH  | `/change-password/` | `users#changepw`  |
 | DELETE | `/sign-out/`        | `users#signout`   |
 
+## API Routes
+
+### _User Authorization Routes_
+
+| HTTP Method   | URL Path        | Result               | Action           |
+|:--------------|:----------------|:---------------------|:-----------------|
+| POST          | /sign-up        | create profile       | create           |
+| POST          | /sign-in        | get single profile   | show or retrieve |
+| DELETE        | /sign-out       | delete profile       | destroy          |
+| PATCH         | /change-password| update password      | update           |
+
+
+### _Profile Routes_
+
+| HTTP Method   | URL Path        | Result               | Action           |
+|:--------------|:----------------|:---------------------|:-----------------|
+| GET           | /profiles       | read list of profiles| index or list    |
+| GET           | /profiles/`:id` | read single profile  | show or retrieve |
+| POST          | /profile        | create profile       | create           |
+| PATCH         | /profiles/`:id` | update profile       | update           |
+| DELETE        | /profiles/`:id` | delete profile       | destroy          |
+
+### _Film Routes_
+
+| HTTP Method   | URL Path        | Result               | Action           |
+|:--------------|:----------------|:---------------------|:-----------------|
+| GET           | /films           | see list of films   | index or list    |
+| GET           | /film/:id        | view a film         | create           |
+
+
+
 ## Technologies Used
 
 |    Libraries      | Languages        | Frameworks              | Database          | Version Control      | API           |
@@ -41,7 +89,16 @@ Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up 
 |   [Mongoose](https://mongoosejs.com/)         | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)          |        |          |
 |         |           |        |         |
 
+### [Link to Front End Repo](https://github.com/SakoPak/Ghibli-Flix)
+### Links to Deployed Sites:
+- [Link to the API Deployed]()
+- [Link to the Client Deployed]()
 
+
+## Stretch Goals
+- User can pick movies to place on their watchlist.
+- User will be able to edit, delete and update their watchlist.
+- User can further personalize their dashboard.
 
 ## About Me
 
