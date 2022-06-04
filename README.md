@@ -2,18 +2,18 @@
 
 ## Introduction
 
-Ghibli Flix is a place to find all your favorite Ghibli movies! You can look up any Ghibli movie, read a summary and create a favorite watchlist for future viewing.
+Ghibli Flix is a place to find all your favorite Ghibli films! You can browse the Ghibli film library, read a summary and learn more about your favorite Ghibli films.
 
 
 ## Logging in Online
- To log in and get started, click <a href="https://afternoon-earth-27940.herokuapp.com" target="_blank">here!</a>
+ To log in to the live site, click <a href="https://sakopak.github.io/Ghibli-Flix/" target="_blank">here!</a>
 
 ## Installation
 
-Before you can run the app with `nodemon server.js` install the depedencies: Node.js and npm on your computer. 
+Before you can run the app with `nodemon server.js`, install the dependencies: Node.js and npm on your computer. 
 
-[Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)).
-To begin, navigate on the project directory, after you have downloaded or cloned this repository and run:
+[Documentation on downloading and installing Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+To begin, navigate on the project directory (after you have downloaded or cloned this repository) and run:
 
 ##### `npm install`
 
@@ -26,7 +26,11 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 - To install: ``` npm install -g nodemon ```
 
 ## A Preview of Ghibli Flix
-![GhibliScreenShot](https://user-images.githubusercontent.com/82487617/170667840-f76bc06e-51ab-44b1-9441-02d1851ea4cc.png)
+![GhibliScreenShot1](https://user-images.githubusercontent.com/82487617/171982525-233f2371-1478-4f24-bc54-2f6b76e4d664.png)
+
+![GhibliScreenShot2](https://user-images.githubusercontent.com/82487617/171982562-d1b0abf7-f700-4abe-bc04-df907bb1aa50.png)
+
+![GhibliScreenShot3](https://user-images.githubusercontent.com/82487617/171982588-53f57974-e977-4ef7-9301-3aa80110ccfa.png)
 
 ## User Stories    
 
@@ -98,6 +102,10 @@ To begin, navigate on the project directory, after you have downloaded or cloned
 - User will be able to edit, delete and update their watchlist.
 - User can further personalize their dashboard.
 
+## Image Credit
+- [Studio Ghibli](https://www.ghibli.jp/)
+- <a target="_blank" href="https://icons8.com/icon/13wc47z7qRRJ/totoro">Totoro</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+  
 ## About Me
 
 Hi, I'm Sako Pak, a former photographer turned software engineer.
